@@ -32,8 +32,10 @@ body {
 }
 
 #gamefield {
-  width: 640px;
-  height: 600px;
+  border: 1px solid black;
+  width: fit-content;
+  display: grid
+
 }
 
 #inventory {
@@ -44,10 +46,214 @@ body {
 
 
 
+/* BOARD STYLES */
+
+#background {
+  grid-area: 1/1;
+  display: grid;
+  grid-template-columns: repeat(var(--GRID_WIDTH), max-content);
+}
+
+/* TILE STYLES */
+
+#background .tile {
+  width: var(--TILE_SIZE);
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  image-rendering: pixelated;
+
+}
+
+.tile.floor {
+  background-image: url('./assets/tiles/floor.png')
+}
+
+.tile.tree {
+  background-image: url('./assets/tiles/tree.png')
+}
 
 
+/* CHARACTER STYLES */ 
+
+#characters {
+  grid-area: 1/1;
+}
+
+#player {
+  width: 32px;
+  aspect-ratio: 16/20;
+  background-image: url('./assets/characters/player.png');
+  background-size: 400% 400%;
+  image-rendering: pixelated;
+}
+
+#player.animate {
+  animation-duration: 1s;
+  animation-timing-function: steps(4);
+  animation-iteration-count: infinite;
+}
+
+#player.down {
+  background-position: 0% 0%;
+  animation-name: down;
+}
+
+#player.left {
+  background-position: 0% -200%;
+  animation-name: left;
+}
+
+#player.right {
+  background-position: 0% -300%;
+  animation-name: right;
+}
+
+#player.up {
+  background-position: 0% -100%;
+  animation-name: up;
+}
+
+/* KEY FRAMES */ 
+
+@keyframes left {
+  from {
+      background-position: 0% -200%;
+  }
+  to {
+      background-position: 400% -200%;
+  }
+}
+
+@keyframes right {
+  from {
+      background-position: 0% -300%;
+  }
+  to {
+      background-position: 400% -300%;
+  }
+}
+
+@keyframes up {
+  from {
+      background-position: 0% -100%;
+  }
+  to {
+      background-position: 400% -100%;
+  }
+}
+
+@keyframes down {
+  from {
+      background-position: 0% 0%;
+  }
+  to {
+      background-position: 400% 0%;
+  }
+}
+
+/* ENEMY STYLES */
+.ghost {
+  width: 32px;
+  aspect-ratio: 16/20;
+  background-image: url('./assets/characters/enemies.png');
+  background-size: 1200% 400%;
+  background-position: -600% 0%;
+
+  image-rendering: pixelated;
+}
+
+.ghost.animate {
+  animation-duration: 1s;
+  animation-timing-function: steps(3);
+  animation-iteration-count: infinite;
+}
+
+.ghost.down {
+  background-position: -600% 0%;
+  animation-name: enemydown;
+}
+
+.ghost.left {
+  background-position: -600% -200%;
+  animation-name: enemyleft;
+}
+
+.ghost.right {
+  background-position: -600% -300%;
+  animation-name: enemyright;
+}
+
+.ghost.up {
+  background-position: -600% -100%;
+  animation-name: enemyup;
+}
+
+@keyframes enemyleft {
+  from {
+      background-position: -600% -100%;
+  }
+  to {
+      background-position: -900% -100%;
+  }
+}
+
+@keyframes enemyright {
+  from {
+      background-position: -600% -200%;
+  }
+  to {
+      background-position: -900% -200%;
+  }
+}
+
+@keyframes enemyup {
+  from {
+      background-position: -600% -300%;
+  }
+  to {
+      background-position: -900% -300%;
+  }
+}
+
+@keyframes enemydown {
+  from {
+      background-position: -600% 0%;
+  }
+  to {
+      background-position: -900% 0%;
+  }
+}
 /* DEVELOPMENT STYLES */
 
-div {
+/* div {
   border: 1px red dotted;
+} */
+
+.highlight {
+  outline: 2px dashed yellow;
+  translate: 0 0;
+}
+
+.show-rect {
+  outline: 2px solid red;
+}
+
+.show-reg-point::before {
+  content: "";
+  position: absolute;
+  background-color: cyan;
+  width: 3px;
+  height: 3px;
+  translate: var(--regX) var(--regY);
+}
+
+.show-hitbox::after {
+  content: "";
+  position: absolute;
+  width: var(--hitboxW);
+  height: var(--hitboxH);
+  translate: var(--hitboxX) var(--hitboxY);
+
+  outline: 2px solid hotpink;
 }

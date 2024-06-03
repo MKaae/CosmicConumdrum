@@ -2,21 +2,20 @@ class Tile {
     
     constructor(tileType) {
         this.tileType = tileType;
-        this.tileImage = this.tileImage();
-        this.walkAble = this.walkAble();    
+        this.walkable = this.isWalkable();
+        this.left = false;
+        this.right = false;
+        this.up = false;
+        this.down = false;    
     }
 
-    tileImage() {
-      let tileImage;
-      tileImage = "../assets/tiles/" + this.tileType + ".png";
-      return tileImage;
-    }
-
-    walkAble() {
+    isWalkable() {
         if(this.tileType === "floor"){
             return true;
+        } else {
+            return false;
         }
-        return false;
+
     }
 }
 
