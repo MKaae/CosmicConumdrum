@@ -38,6 +38,10 @@ body {
   padding-right: 10px;
 }
 
+#information h1 {
+  text-align: center;
+}
+
 #gamefield {
   width: fit-content;
   display: grid
