@@ -48,6 +48,11 @@ body {
     height: 600px;
     border: 7px groove #bcbcbc;
     background-color: #bcbcbc;
+    font-family: 'Silkscreen', sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 /* BOARD STYLES */
