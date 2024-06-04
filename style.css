@@ -11,10 +11,12 @@ body {
     justify-content: start;
     align-items: center;
     flex-direction: column;
+    background-image: url("./assets/utilities/background.png");
+    background-size: cover;
 }
 
 #description {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 #game-container {
@@ -29,26 +31,29 @@ body {
 #information {
   width: 300px;
   height: 600px;
+  border: 7px groove #bcbcbc;
+  background-color: #bcbcbc;
+  font-family: 'Silkscreen', sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #gamefield {
-  border: 1px solid black;
   width: fit-content;
   display: grid
-
 }
 
 #inventory {
     width: 300px;
     height: 600px;
+    border: 7px groove #bcbcbc;
+    background-color: #bcbcbc;
 }
-
-
-
 
 /* BOARD STYLES */
 
 #background {
+  border: 7px groove #bcbcbc;
   grid-area: 1/1;
   display: grid;
   grid-template-columns: repeat(var(--GRID_WIDTH), max-content);
