@@ -1,8 +1,5 @@
 import Tile from "../model/Tile.js";
 
-const floorTile = new Tile("floor");
-const treeTile = new Tile("tree");
-
 export const level1 = {
   level: 1,
   emeneyCount: 2,
@@ -11,20 +8,20 @@ export const level1 = {
       {enemyType: "ghost", x: 500, y: 500}
   ],
   tileSet: [
-      [floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, treeTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, floorTile, treeTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, floorTile, treeTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
-      [floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile, floorTile],
+      [new Tile("floor"), new Tile("tree"), new Tile("floor"), new Tile("tree"), new Tile("floor"), new Tile("tree"), new Tile("floor"), new Tile("tree"), new Tile("floor"), new Tile("tree"), new Tile("floor"), new Tile("tree"), new Tile("floor"), new Tile("tree"), new Tile("floor"), new Tile("tree")],
+      [new Tile("floor"), new Tile("tree"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
+      [new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
+      [new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
+      [new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
+      [new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
+      [new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
+      [new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
+      [new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
+      [new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
+      [new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
+      [new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
+      [new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
+      [new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
+      [new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor"), new Tile("floor")],
   ]
 }

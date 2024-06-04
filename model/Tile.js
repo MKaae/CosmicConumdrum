@@ -3,10 +3,12 @@ class Tile {
     constructor(tileType) {
         this.tileType = tileType;
         this.walkable = this.isWalkable();
-        this.left = false;
-        this.right = false;
-        this.up = false;
-        this.down = false;    
+        this.west = null;
+        this.east = null;
+        this.north = null;
+        this.south = null;
+        this.x = null;
+        this.y = null;    
     }
 
     isWalkable() {
@@ -15,7 +17,13 @@ class Tile {
         } else {
             return false;
         }
+    }
 
+    setNorth(newNorth){
+        this.north = newNorth;
+    }
+    setTileType(newTileType){
+        this.tileType = newTileType;
     }
 }
 

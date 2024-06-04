@@ -7,7 +7,7 @@ class Player{
         this.hitbox = {
             x: 10,
             y: 13,
-            w: 12,
+            w: 13,
             h: 24
         }
         this.speed = 120,
