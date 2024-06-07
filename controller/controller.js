@@ -32,11 +32,11 @@ const controls = {
 
 
 export function initController(level) {
-  gameBoard = null;
-  player = null;
+  gameBoard = [];
+  player = {};
   enemies = [];
-  item = null;
-  obstacles = null;
+  item = [];
+  obstacles = [];
   aStarOutput = [];
   ghostRoutes = [];
 
@@ -67,11 +67,7 @@ function tick(timestamp) {
     checkWin();
   }
 
-  const reset = checkCollision();
-  if(reset){
-    return;
-  }
-
+  
   movePlayer(deltaTime);
   displayItem(item);
   displayPlayerAtPosition(player);
@@ -80,12 +76,16 @@ function tick(timestamp) {
   ghostRoutes = calculateRoute(aStarOutput);
   moveGhost(deltaTime);
   
+  const reset = checkCollision();
+  if(reset){
+    return;
+  }
+  
   displayEnemiesAtPosition(enemies[0]);
   displayEnemiesAnimation(enemies[0]);
   
   displayBoard(gameBoard);
-  enemies[0].direction = "";
-  showDebugging();
+  // showDebugging();
 }
 
 function checkCollision(){

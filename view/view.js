@@ -6,11 +6,10 @@ const button = document.getElementById("nextlevel-btn");
 button.addEventListener('click', startfunction);
 
 let currentLevelIndex = 0;
-let levels = [level1]; // Simplified initialization
+let levels = [level1]; 
 
 function startfunction() {
   const bgMusic = document.getElementById('background-music');
-  // Check if the music is already playing to avoid starting multiple times
   if (bgMusic.paused) {
     bgMusic.volume = 0.5; 
     bgMusic.play().catch(error => {
@@ -36,16 +35,10 @@ export function playNewGame() {
   const deathscreen = document.getElementById('deathscreen');
   const button = document.getElementById('deathscreen-btn');
 
-  function nextLevelHandler() {
-    deathscreen.classList.remove('show');
-    deathscreen.classList.add('hidden');
-    button.removeEventListener('click', nextLevelHandler);
-    nextLevelSetup();
-  }
   deathscreen.classList.remove('hidden');
   deathscreen.classList.add('show');
 
-  button.addEventListener('click', nextLevelHandler);
+  button.addEventListener('click', () => location.reload());
 }
 
 export function nextLevelSetup() {
