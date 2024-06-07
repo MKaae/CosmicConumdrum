@@ -1,12 +1,12 @@
 class Player{
     constructor(){
-        this.x = 14,
-        this.y = 10,
-        this.regX = 11,
-        this.regY = 12,
+        this.x = 305,
+        this.y = 540,
+        this.regX = 15,
+        this.regY = 20,
         this.hitbox = {
             x: 10,
-            y: 13,
+            y: 11,
             w: 13,
             h: 24
         }

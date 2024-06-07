@@ -14,6 +14,8 @@ class Tile {
     isWalkable() {
         if(this.tileType === "floor"){
             return true;
+        } else if (this.tileType === "exit") {
+            return true;
         } else {
             return false;
         }

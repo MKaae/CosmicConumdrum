@@ -56,7 +56,8 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* BOARD STYLES */
@@ -76,17 +77,58 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   image-rendering: pixelated;
-
 }
 
 .tile.floor {
-  background-image: url('./assets/tiles/floor.png')
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 1200% !important;
+  image-rendering: pixelated;
+  background-position: 0% 50%; 
 }
 
-.tile.tree {
-  background-image: url('./assets/tiles/tree.png')
+.tile.wallTLcorner {
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 1200% !important;
+  image-rendering: pixelated;
+  background-position: 0% 100%; 
 }
 
+.tile.wallTRcorner {
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 1200% !important;
+  image-rendering: pixelated;
+  background-position: 11% 100%; 
+}
+
+.tile.wallhori {
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 1200% !important;
+  image-rendering: pixelated;
+  background-position: 5% 100%; 
+}
+
+.tile.wallvert {
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 1200% !important;
+  image-rendering: pixelated;
+  background-position: 45% 0%; 
+}
+
+.tile.exit {
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 600% !important;
+  image-rendering: pixelated;
+  background-position: 24% 67%; 
+}
+
+#item {
+  width: 40px;
+  height: 40px;
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 1200% !important;
+  image-rendering: pixelated;
+  background-position: 0% 29%; 
+}
 
 /* CHARACTER STYLES */ 
 
@@ -256,7 +298,7 @@ body {
 .show-reg-point::before {
   content: "";
   position: absolute;
-  background-color: cyan;
+  background-color: yellow;
   width: 3px;
   height: 3px;
   translate: var(--regX) var(--regY);
@@ -270,4 +312,87 @@ body {
   translate: var(--hitboxX) var(--hitboxY);
 
   outline: 2px solid hotpink;
+}
+
+.show-reg-point-e::before {
+  content: "";
+  position: absolute;
+  background-color: yellow;
+  width: 3px;
+  height: 3px;
+  translate: var(--regEX) var(--regEY);
+}
+
+.show-hitbox-e::after {
+  content: "";
+  position: absolute;
+  width: var(--hitboxEW);
+  height: var(--hitboxEH);
+  translate: var(--hitboxEX) var(--hitboxEY);
+
+  outline: 2px solid hotpink;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+#psstatus {
+  height: 100px;
+  width: 100px;
+  border: 5px groove grey;
+  background-image: "";
+  background-size: auto 900% !important;
+  image-rendering: pixelated;
+  background-position: 0% 29%;
+}
+
+#nextlevel {
+  font-family: 'Silkscreen', sans-serif;
+  width: 800px;
+  height: 650px;
+  position: absolute;
+  text-align: center;
+  background-color: grey;
+  border: 5px groove grey;
+}
+
+#nextlevel-btn {
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  background-color: light-grey;
+  border: 5px groove grey;
+  cursor: pointer;
+}
+
+#nextlevel-btn:hover {
+  background-color: lightgreen;
+}
+
+#deathscreen {
+  font-family: 'Silkscreen', sans-serif;
+  width: 650px;
+  height: 600px;
+  position: absolute;
+  text-align: center;
+  background-color: grey;
+  border: 5px groove grey;
+}
+
+#deathscreen-btn {
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  background-color: light-grey;
+  border: 5px groove grey;
+  cursor: pointer;
+}
+
+#deathscreen-btn:hover {
+  background-color: lightgreen;
 }

@@ -3,17 +3,17 @@ class Enemy {
         this.enemyType = enemyType;
         this.x = startPos.x;
         this.y = startPos.y;
-        this.regX = 11,
-        this.regY = 12,
-            this.hitbox = {
+        this.regX = 15,
+        this.regY = 20,
+        this.hitbox = {
                 x: 10,
                 y: 13,
                 w: 12,
                 h: 24
-            }
-        this.speed = 120,
-        this.moving = true,
-        this.direction = "down"
+        }
+        this.speed = 60,
+        this.moving = false,
+        this.direction = ""
     }
 }
 

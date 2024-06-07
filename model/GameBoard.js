@@ -1,10 +1,13 @@
 class GameBoard {
-    constructor(tileSet, enemyCount) {
+    constructor(tileSet, enemyCount, itemCount, exit) {
         this.GRID_WIDTH = 16;
         this.GRID_HEIGHT = 15;
+        this.obstacles = [];
         this.board = this.createBoard(tileSet);
         this.TILE_SIZE = 40;
         this.ENEMY_COUNT = enemyCount;
+        this.ITEM_COUNT = itemCount;
+        this.EXIT = exit;
     }
     createBoard(tileSet) {
         // Iterater gennem alle vores tiles, og tilføj relationer
@@ -13,6 +16,9 @@ class GameBoard {
                 const currentTile = tileSet[i][j];
                 currentTile.x = [i];
                 currentTile.y = [j];
+                if(!tileSet[i][j].walkable){
+                    this.obstacles.push({ x: i, y: j });
+                }
                 if (i > 0) {
                     if (tileSet[i - 1][j].walkable) {
                         // check north
