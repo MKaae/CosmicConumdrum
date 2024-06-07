@@ -1,2 +1,2 @@
 ## Cosmic Conondrum
-(CosmicConundrum.png)
+![Cosmic Conondrum](CosmicConundrum.png)
