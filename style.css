@@ -1,0 +1,402 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("./assets/utilities/background.png");
+    background-size: cover;
+}
+
+#description {
+    margin-top: 50px;
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+#information {
+  width: 300px;
+  height: 600px;
+  border: 7px groove #bcbcbc;
+  background-color: #bcbcbc;
+  font-family: 'Silkscreen', sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#information h1 {
+  text-align: center;
+}
+
+#gamefield {
+  width: fit-content;
+  display: grid
+}
+
+#inventory {
+    width: 300px;
+    height: 600px;
+    border: 7px groove #bcbcbc;
+    background-color: #bcbcbc;
+    font-family: 'Silkscreen', sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* BOARD STYLES */
+
+#background {
+  border: 7px groove #bcbcbc;
+  grid-area: 1/1;
+  display: grid;
+  grid-template-columns: repeat(var(--GRID_WIDTH), max-content);
+}
+
+/* TILE STYLES */
+
+#background .tile {
+  width: var(--TILE_SIZE);
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  image-rendering: pixelated;
+}
+
+.tile.floor {
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 1200% !important;
+  image-rendering: pixelated;
+  background-position: 0% 50%; 
+}
+
+.tile.wallTLcorner {
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 1200% !important;
+  image-rendering: pixelated;
+  background-position: 0% 100%; 
+}
+
+.tile.wallTRcorner {
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 1200% !important;
+  image-rendering: pixelated;
+  background-position: 11% 100%; 
+}
+
+.tile.wallhori {
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 1200% !important;
+  image-rendering: pixelated;
+  background-position: 5% 100%; 
+}
+
+.tile.wallvert {
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 1200% !important;
+  image-rendering: pixelated;
+  background-position: 45% 0%; 
+}
+
+.tile.exit {
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 600% !important;
+  image-rendering: pixelated;
+  background-position: 24% 67%; 
+}
+
+#item {
+  width: 40px;
+  height: 40px;
+  background-image: url('./assets/tiles/scifi_hackspace_frama.png');
+  background-size: auto 1200% !important;
+  image-rendering: pixelated;
+  background-position: 0% 29%; 
+}
+
+/* CHARACTER STYLES */ 
+
+#characters {
+  grid-area: 1/1;
+}
+
+#player {
+  width: 32px;
+  aspect-ratio: 16/20;
+  background-image: url('./assets/characters/player.png');
+  background-size: 400% 400%;
+  image-rendering: pixelated;
+}
+
+#player.animate {
+  animation-duration: 1s;
+  animation-timing-function: steps(4);
+  animation-iteration-count: infinite;
+}
+
+#player.down {
+  background-position: 0% 0%;
+  animation-name: down;
+}
+
+#player.left {
+  background-position: 0% -200%;
+  animation-name: left;
+}
+
+#player.right {
+  background-position: 0% -300%;
+  animation-name: right;
+}
+
+#player.up {
+  background-position: 0% -100%;
+  animation-name: up;
+}
+
+/* KEY FRAMES */ 
+
+@keyframes left {
+  from {
+      background-position: 0% -200%;
+  }
+  to {
+      background-position: 400% -200%;
+  }
+}
+
+@keyframes right {
+  from {
+      background-position: 0% -300%;
+  }
+  to {
+      background-position: 400% -300%;
+  }
+}
+
+@keyframes up {
+  from {
+      background-position: 0% -100%;
+  }
+  to {
+      background-position: 400% -100%;
+  }
+}
+
+@keyframes down {
+  from {
+      background-position: 0% 0%;
+  }
+  to {
+      background-position: 400% 0%;
+  }
+}
+
+/* ENEMY STYLES */
+.ghost {
+  width: 32px;
+  aspect-ratio: 16/20;
+  background-image: url('./assets/characters/enemies.png');
+  background-size: 1200% 400%;
+  background-position: -600% 0%;
+
+  image-rendering: pixelated;
+}
+
+.ghost.animate {
+  animation-duration: 1s;
+  animation-timing-function: steps(3);
+  animation-iteration-count: infinite;
+}
+
+.ghost.down {
+  background-position: -600% 0%;
+  animation-name: enemydown;
+}
+
+.ghost.left {
+  background-position: -600% -200%;
+  animation-name: enemyleft;
+}
+
+.ghost.right {
+  background-position: -600% -300%;
+  animation-name: enemyright;
+}
+
+.ghost.up {
+  background-position: -600% -100%;
+  animation-name: enemyup;
+}
+
+@keyframes enemyleft {
+  from {
+      background-position: -600% -100%;
+  }
+  to {
+      background-position: -900% -100%;
+  }
+}
+
+@keyframes enemyright {
+  from {
+      background-position: -600% -200%;
+  }
+  to {
+      background-position: -900% -200%;
+  }
+}
+
+@keyframes enemyup {
+  from {
+      background-position: -600% -300%;
+  }
+  to {
+      background-position: -900% -300%;
+  }
+}
+
+@keyframes enemydown {
+  from {
+      background-position: -600% 0%;
+  }
+  to {
+      background-position: -900% 0%;
+  }
+}
+/* DEVELOPMENT STYLES */
+
+/* div {
+  border: 1px red dotted;
+} */
+
+.highlight {
+  outline: 2px dashed yellow;
+  translate: 0 0;
+}
+
+.show-rect {
+  outline: 2px solid red;
+}
+
+.show-reg-point::before {
+  content: "";
+  position: absolute;
+  background-color: yellow;
+  width: 3px;
+  height: 3px;
+  translate: var(--regX) var(--regY);
+}
+
+.show-hitbox::after {
+  content: "";
+  position: absolute;
+  width: var(--hitboxW);
+  height: var(--hitboxH);
+  translate: var(--hitboxX) var(--hitboxY);
+
+  outline: 2px solid hotpink;
+}
+
+.show-reg-point-e::before {
+  content: "";
+  position: absolute;
+  background-color: yellow;
+  width: 3px;
+  height: 3px;
+  translate: var(--regEX) var(--regEY);
+}
+
+.show-hitbox-e::after {
+  content: "";
+  position: absolute;
+  width: var(--hitboxEW);
+  height: var(--hitboxEH);
+  translate: var(--hitboxEX) var(--hitboxEY);
+
+  outline: 2px solid hotpink;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+#psstatus {
+  height: 100px;
+  width: 100px;
+  border: 5px groove grey;
+  background-image: "";
+  background-size: auto 900% !important;
+  image-rendering: pixelated;
+  background-position: 0% 29%;
+}
+
+#nextlevel {
+  font-family: 'Silkscreen', sans-serif;
+  width: 800px;
+  height: 650px;
+  position: absolute;
+  text-align: center;
+  background-color: grey;
+  border: 5px groove grey;
+}
+
+#nextlevel-btn {
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  background-color: light-grey;
+  border: 5px groove grey;
+  cursor: pointer;
+}
+
+#nextlevel-btn:hover {
+  background-color: lightgreen;
+}
+
+#deathscreen {
+  font-family: 'Silkscreen', sans-serif;
+  width: 650px;
+  height: 600px;
+  position: absolute;
+  text-align: center;
+  background-color: grey;
+  border: 5px groove grey;
+}
+
+#deathscreen-btn {
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  background-color: light-grey;
+  border: 5px groove grey;
+  cursor: pointer;
+}
+
+#deathscreen-btn:hover {
+  background-color: lightgreen;
+}
+
+.redpath {
+  background-color: red;
+}
